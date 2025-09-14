@@ -102,7 +102,7 @@ def chatbot_page():
         
         try:
             response = client.chat.completions.create(
-                model="llama3-70b-8192",
+                model="llama-3.1-8b-instant",
                 messages=st.session_state.chatbot_history,
                 temperature=0.3  # Lower temperature for more focused responses
             )
@@ -150,4 +150,5 @@ def chatbot_page():
     return False
 
 if __name__ == "__main__":
+
     chatbot_page()
