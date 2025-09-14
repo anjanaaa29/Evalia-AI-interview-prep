@@ -160,34 +160,3 @@ class HRInterview:
             print(f"Error parsing evaluation: {str(e)}")
         
         return evaluation
-
-# Example usage
-# if __name__ == "__main__":
-#     import dotenv
-#     dotenv.load_dotenv()
-    
-#     hr = HRInterview()
-    
-#     # Test question generation
-#     questions = hr.generate_questions("Data Science")
-#     print("Generated HR Questions:")
-#     for i, q in enumerate(questions, 1):
-#         print(f"{i}. {q}")
-    
-#     # Test evaluation
-#     sample_answer = """When I had a conflict with a teammate about project direction, 
-#     I scheduled a meeting where we both presented our viewpoints. 
-#     We found a compromise that incorporated elements from both approaches."""
-    
-#     evaluation = hr.evaluate_answer(
-#         question="Tell me about a time you resolved a conflict",
-#         answer=sample_answer
-#     )
-    
-#     print("\nEvaluation Results:")
-#     print(f"Score: {evaluation['score']}/10")
-#     print(f"Feedback: {evaluation['feedback']}")
-#     print("Improvement Tips:")
-#     for tip in evaluation['improvement_tips']:
-
-#         print(f"- {tip}")
