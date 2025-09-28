@@ -7,8 +7,15 @@ import streamlit as st
 
 class VoiceProcessor:
     def __init__(self, credentials_path="ai-interview-54321-c85b0cb75e26.json"):
-        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
-        self.client = speech.SpeechClient()
+        if os.path.exists(credentials_path):
+            # Local development: use JSON file
+            os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
+            self.client = speech.SpeechClient()
+        else:
+            # Streamlit Cloud: use secrets
+            creds_dict = st.secrets["gcp_service_account"]
+            creds = service_account.Credentials.from_service_account_info(creds_dict)
+            self.client = speech.SpeechClient(credentials=creds)
         self.silence_duration=3.0
         
     
@@ -101,4 +108,5 @@ class VoiceProcessor:
         
 #         except Exception as e:
 #             st.error(f"Transcription error: {e}")
+
 #             return ""
