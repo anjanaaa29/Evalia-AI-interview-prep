@@ -1,24 +1,11 @@
-# === Streamlit Web App ===
 streamlit==1.35.0
-
-# === Mic Input Support ===
 streamlit-mic-recorder==0.0.5
-
-# === Google Cloud Speech-to-Text ===
 google-cloud-speech==2.26.0
-google-auth==2.31.0        # needed for service_account creds
-
-# === LLM Integration ===
+google-auth==2.31.0
 groq>=0.6.1
-
-# === Environment Variable Support ===
 python-dotenv==1.0.1
-
-# === Data Handling & Audio Processing ===
 pandas==2.2.2
 plotly==5.21.0
 soundfile==0.12.1
-numpy==1.26.4
-
-# === Typing & Dev Tools ===
+numpy==1.25.2
 typing-extensions==4.12.0
